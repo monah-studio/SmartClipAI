@@ -2,15 +2,15 @@
 
 <div align="center">
 
-# ClipAI 🤖
+# SmartClipAI 🤖
 
 **AI-powered clipboard assistant for macOS — translate, rewrite, summarize, explain code, all from your menu bar.**
 
-*ClipAI 是一款 AI 增强的 macOS 剪贴板助手，菜单栏即可完成翻译、润色、总结和代码解释。*
+*SmartClipAI 是一款 AI 增强的 macOS 剪贴板助手，菜单栏即可完成翻译、润色、总结和代码解释。*
 
-[![GitHub stars](https://img.shields.io/github/stars/timwynter/ClipAI?style=social)](https://github.com/timwynter/ClipAI)
+[![GitHub stars](https://img.shields.io/github/stars/Monah-Limited/SmartClipAI?style=social)](https://github.com/Monah-Limited/SmartClipAI)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![macOS](https://img.shields.io/badge/platform-macOS-blue.svg)](https://github.com/timwynter/ClipAI)
+[![macOS](https://img.shields.io/badge/platform-macOS-blue.svg)](https://github.com/Monah-Limited/SmartClipAI)
 [![Python](https://img.shields.io/badge/python-3.8+-green.svg)](https://www.python.org/)
 
 </div>
@@ -35,14 +35,14 @@ https://github.com/user-attachments/assets/banner.png
 
 ```bash
 # Clone the repo
-git clone https://github.com/timwynter/ClipAI.git
-cd ClipAI
+git clone https://github.com/Monah-Limited/SmartClipAI.git
+cd SmartClipAI
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Run ClipAI
-python src/clipai.py
+# Run SmartClipAI
+python src/smartclipai.py
 ```
 
 ### 2. Add your API key
@@ -73,7 +73,7 @@ Click the 📋 icon in your menu bar → **Settings** → paste your DeepSeek AP
 
 ## 🔧 How It Works
 
-ClipAI is a lightweight macOS menu bar app built with:
+SmartClipAI is a lightweight macOS menu bar app built with:
 
 - **[rumps](https://github.com/jaredks/rumps)** — Python framework for macOS menu bar apps
 - **[pyperclip](https://github.com/asweigart/pyperclip)** — Cross-platform clipboard access
@@ -118,7 +118,7 @@ Your API key is stored securely in **macOS Keychain** — never in plain text.
 make build
 ```
 
-Then drag `dist/ClipAI.app` to your Applications folder. Requires rumps + pyobjc installed.
+Then drag `dist/SmartClipAI.app` to your Applications folder. Requires rumps + pyobjc installed.
 
 ---
 

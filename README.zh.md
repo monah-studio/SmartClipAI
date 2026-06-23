@@ -2,15 +2,15 @@
 
 <div align="center">
 
-# ClipAI 🤖
+# SmartClipAI 🤖
 
 **AI 增强的 macOS 剪贴板助手 — 菜单栏一键翻译、润色、总结、解释代码。**
 
-*ClipAI is an AI-powered clipboard assistant for macOS — translate, rewrite, summarize, explain code, all from your menu bar.*
+*SmartClipAI is an AI-powered clipboard assistant for macOS — translate, rewrite, summarize, explain code, all from your menu bar.*
 
-[![GitHub stars](https://img.shields.io/github/stars/timwynter/ClipAI?style=social)](https://github.com/timwynter/ClipAI)
+[![GitHub stars](https://img.shields.io/github/stars/Monah-Limited/SmartClipAI?style=social)](https://github.com/Monah-Limited/SmartClipAI)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![macOS](https://img.shields.io/badge/platform-macOS-blue.svg)](https://github.com/timwynter/ClipAI)
+[![macOS](https://img.shields.io/badge/platform-macOS-blue.svg)](https://github.com/Monah-Limited/SmartClipAI)
 
 </div>
 
@@ -34,14 +34,14 @@ https://github.com/user-attachments/assets/banner.png
 
 ```bash
 # 克隆仓库
-git clone https://github.com/timwynter/ClipAI.git
-cd ClipAI
+git clone https://github.com/Monah-Limited/SmartClipAI.git
+cd SmartClipAI
 
 # 安装依赖
 pip install -r requirements.txt
 
-# 运行 ClipAI
-python src/clipai.py
+# 运行 SmartClipAI
+python src/smartclipai.py
 ```
 
 ### 2. 添加 API Key
@@ -72,7 +72,7 @@ python src/clipai.py
 
 ## 🔧 工作原理
 
-ClipAI 是一个轻量级的 macOS 菜单栏应用，基于：
+SmartClipAI 是一个轻量级的 macOS 菜单栏应用，基于：
 
 - **[rumps](https://github.com/jaredks/rumps)** — macOS 菜单栏应用 Python 框架
 - **[pyperclip](https://github.com/asweigart/pyperclip)** — 跨平台剪贴板访问

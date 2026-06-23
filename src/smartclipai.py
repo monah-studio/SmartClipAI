@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""ClipAI - AI-powered clipboard assistant for macOS menu bar."""
+"""SmartClipAI - AI-powered clipboard assistant for macOS menu bar."""
 
 import rumps
 import pyperclip
@@ -20,8 +20,8 @@ from Foundation import NSBlockOperation, NSOperationQueue
 DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat/completions"
 DEEPSEEK_MODEL = "deepseek-chat"  # V4 Flash
 
-KEYCHAIN_ACCOUNT = "ClipAI"
-KEYCHAIN_SERVICE = "com.clipai.apikey"
+KEYCHAIN_ACCOUNT = "SmartClipAI"
+KEYCHAIN_SERVICE = "com.smartclipai.apikey"
 
 
 # ── Keychain helpers ─────────────────────────────────────────────────────────
@@ -77,7 +77,7 @@ def _create_icon_path():
     # Letter "A" icon
     draw.text((11, 12), "AI", fill=(255, 255, 255, 255))
 
-    path = os.path.join(tempfile.gettempdir(), "clipai_icon.png")
+    path = os.path.join(tempfile.gettempdir(), "smartsmartsmartclipai_icon.png")
     img.save(path, "PNG")
     return path
 
@@ -121,10 +121,10 @@ def _generate_banner_icon():
               font=font_large)
 
     # Bottom text
-    draw.text((margin, size - margin - 180), "ClipAI",
+    draw.text((margin, size - margin - 180), "SmartClipAI",
               fill=(200, 220, 255, 255), font=font_small)
 
-    path = os.path.join(tempfile.gettempdir(), "clipai_banner.png")
+    path = os.path.join(tempfile.gettempdir(), "smartclipai_banner.png")
     img.save(path, "PNG")
     return path
 
@@ -139,7 +139,7 @@ def main_thread(fn):
 
 # ── Main App ─────────────────────────────────────────────────────────────────
 
-class ClipAI(rumps.App):
+class SmartClipAI(rumps.App):
     def __init__(self):
         self.icon_path = _create_icon_path()
         super().__init__("📋", icon=self.icon_path, template=False)
@@ -162,28 +162,28 @@ class ClipAI(rumps.App):
     def action_translate(self, _):
         text = pyperclip.paste()
         if not text.strip():
-            rumps.notification("ClipAI", "⚠️ 剪贴板为空", "请先复制文本 (Cmd+C)")
+            rumps.notification("SmartClipAI", "⚠️ 剪贴板为空", "请先复制文本 (Cmd+C)")
             return
         threading.Thread(target=self._translate, args=(text,), daemon=True).start()
 
     def action_rewrite(self, _):
         text = pyperclip.paste()
         if not text.strip():
-            rumps.notification("ClipAI", "⚠️ 剪贴板为空", "请先复制文本 (Cmd+C)")
+            rumps.notification("SmartClipAI", "⚠️ 剪贴板为空", "请先复制文本 (Cmd+C)")
             return
         threading.Thread(target=self._rewrite, args=(text,), daemon=True).start()
 
     def action_summarize(self, _):
         text = pyperclip.paste()
         if not text.strip():
-            rumps.notification("ClipAI", "⚠️ 剪贴板为空", "请先复制文本 (Cmd+C)")
+            rumps.notification("SmartClipAI", "⚠️ 剪贴板为空", "请先复制文本 (Cmd+C)")
             return
         threading.Thread(target=self._summarize, args=(text,), daemon=True).start()
 
     def action_explain(self, _):
         text = pyperclip.paste()
         if not text.strip():
-            rumps.notification("ClipAI", "⚠️ 剪贴板为空", "请先复制代码 (Cmd+C)")
+            rumps.notification("SmartClipAI", "⚠️ 剪贴板为空", "请先复制代码 (Cmd+C)")
             return
         threading.Thread(target=self._explain, args=(text,), daemon=True).start()
 
@@ -191,7 +191,7 @@ class ClipAI(rumps.App):
         """Free-form question about clipboard content."""
         text = pyperclip.paste()
         if not text.strip():
-            rumps.notification("ClipAI", "⚠️ 剪贴板为空", "请先复制文本 (Cmd+C)")
+            rumps.notification("SmartClipAI", "⚠️ 剪贴板为空", "请先复制文本 (Cmd+C)")
             return
         win = rumps.Window(
             title="🤖 自由提问",
@@ -215,7 +215,7 @@ class ClipAI(rumps.App):
             msg = "未设置 API Key\n\n请输入 DeepSeek API Key："
 
         win = rumps.Window(
-            title="⚙️ ClipAI 设置",
+            title="⚙️ SmartClipAI 设置",
             message=msg,
             default_text="",
             ok="保存",
@@ -225,13 +225,13 @@ class ClipAI(rumps.App):
         if r.clicked == 1:
             if r.text.strip():
                 store_api_key(r.text.strip())
-                rumps.notification("ClipAI", "✅ Key 已保存",
+                rumps.notification("SmartClipAI", "✅ Key 已保存",
                                    "API Key 已安全存储在 macOS Keychain")
             elif current_key:
                 delete_api_key()
-                rumps.notification("ClipAI", "🗑️ Key 已删除", "")
+                rumps.notification("SmartClipAI", "🗑️ Key 已删除", "")
             else:
-                rumps.notification("ClipAI", "ℹ️ 未更改", "")
+                rumps.notification("SmartClipAI", "ℹ️ 未更改", "")
 
     # ── AI helpers ───────────────────────────────────────────────────────
 
@@ -239,7 +239,7 @@ class ClipAI(rumps.App):
         api_key = get_api_key()
         if not api_key:
             main_thread(lambda: rumps.notification(
-                "ClipAI", "⚠️ 未设置 API Key",
+                "SmartClipAI", "⚠️ 未设置 API Key",
                 "请点击菜单 → 设置 API Key，然后输入你的 DeepSeek API Key"))
             return None
 
@@ -288,12 +288,12 @@ class ClipAI(rumps.App):
         r = win.run()
         if r.clicked == 1:
             pyperclip.copy(content)
-            rumps.notification("ClipAI", "✅ 已复制到剪贴板", "")
+            rumps.notification("SmartClipAI", "✅ 已复制到剪贴板", "")
 
     # ── Workers ──────────────────────────────────────────────────────────
 
     def _translate(self, text):
-        main_thread(lambda: rumps.notification("ClipAI", "🌍 翻译中...", text[:60]))
+        main_thread(lambda: rumps.notification("SmartClipAI", "🌍 翻译中...", text[:60]))
         result = self._call_deepseek(
             f"请将以下文本翻译成中文。直接返回翻译结果，不要附加解释：\n\n{text}",
             "You are a professional translator. Translate text to Chinese accurately and naturally."
@@ -302,7 +302,7 @@ class ClipAI(rumps.App):
             self._show_result("🌍 翻译结果", result)
 
     def _rewrite(self, text):
-        main_thread(lambda: rumps.notification("ClipAI", "✍️ 润色中...", text[:60]))
+        main_thread(lambda: rumps.notification("SmartClipAI", "✍️ 润色中...", text[:60]))
         result = self._call_deepseek(
             f"请润色以下文本，使其更通顺、专业，保持原意。直接返回润色结果：\n\n{text}",
             "You are a professional editor. Polish text to be more fluent and professional."
@@ -311,7 +311,7 @@ class ClipAI(rumps.App):
             self._show_result("✍️ 润色结果", result)
 
     def _summarize(self, text):
-        main_thread(lambda: rumps.notification("ClipAI", "📝 总结中...", text[:60]))
+        main_thread(lambda: rumps.notification("SmartClipAI", "📝 总结中...", text[:60]))
         result = self._call_deepseek(
             f"请用中文总结以下内容的核 心要点，要求简洁扼要：\n\n{text}",
             "You are a professional summarizer. Provide concise key points in Chinese."
@@ -320,7 +320,7 @@ class ClipAI(rumps.App):
             self._show_result("📝 总结结果", result)
 
     def _explain(self, text):
-        main_thread(lambda: rumps.notification("ClipAI", "💻 分析代码中...", text[:60]))
+        main_thread(lambda: rumps.notification("SmartClipAI", "💻 分析代码中...", text[:60]))
         result = self._call_deepseek(
             f"请解释以下代码的功能、原理和关键逻辑：\n\n{text}",
             "You are an expert programmer. Explain code clearly with key concepts and logic."
@@ -329,7 +329,7 @@ class ClipAI(rumps.App):
             self._show_result("💻 代码解释", result)
 
     def _ask(self, context, question):
-        main_thread(lambda: rumps.notification("ClipAI", "🤖 思考中...", question[:60]))
+        main_thread(lambda: rumps.notification("SmartClipAI", "🤖 思考中...", question[:60]))
         result = self._call_deepseek(
             f"以下是我的参考内容：\n{context}\n\n我的问题是：{question}\n\n请基于参考内容回答。",
             "You are a helpful AI assistant. Answer based on the provided context."
@@ -341,5 +341,5 @@ class ClipAI(rumps.App):
 # ── Entry point ──────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
-    app = ClipAI()
+    app = SmartClipAI()
     app.run()
