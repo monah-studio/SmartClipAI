@@ -3,7 +3,7 @@
   <img src="assets/banner.png" width="600" alt="SmartClipAI 横幅">
 </p>
 
-<h1 align="center">SmartClipAI 🤖</h1>
+<h1 align="center">SmartClipAI for macOS 🤖</h1>
 
 <p align="center">
   <b>AI 增强的 macOS 智能剪贴板助手 — 菜单栏一键翻译、润色、总结、解释代码。</b><br>
@@ -107,7 +107,7 @@ Key 会安全存储在 **macOS Keychain** 中，不会明文保存。
 make dmg
 ```
 
-DMG 文件生成在 `dist/SmartClipAI.dmg`。
+DMG 文件生成在 `dist/SmartClipAI-for-macOS.dmg`。
 
 ---
 

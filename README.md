@@ -3,7 +3,7 @@
   <img src="assets/banner.png" width="600" alt="SmartClipAI Banner">
 </p>
 
-<h1 align="center">SmartClipAI 🤖</h1>
+<h1 align="center">SmartClipAI for macOS 🤖</h1>
 
 <p align="center">
   <b>AI-powered clipboard assistant for macOS — translate, rewrite, summarize, explain code from your menu bar.</b><br>
@@ -72,9 +72,9 @@ curl -sfL https://raw.githubusercontent.com/monah-studio/SmartClipAI/main/script
 
 安装后即可使用 `smartclipai` 命令行工具：
 
-**中文：** SmartClipAI 提供完整的命令行支持，无需打开 GUI 即可使用。
+**中文：** SmartClipAI for macOS 提供完整的命令行支持，无需打开 GUI 即可使用。
 
-**English:** SmartClipAI comes with a full CLI — no GUI needed for quick actions.
+**English:** SmartClipAI for macOS comes with a full CLI — no GUI needed for quick actions.
 
 | 命令 Command | 中文说明 | English |
 |---|---|---|
