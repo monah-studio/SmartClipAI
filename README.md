@@ -188,3 +188,7 @@ python src/smartclipai.py
   <br>
   <b>If you find this useful, please give it a star!</b>
 </p>
+
+---
+
+**#macOS #clipboard #AI #menubar #translate #rewrite #summarize #deepseek #python #opensource #productivity #tools**
